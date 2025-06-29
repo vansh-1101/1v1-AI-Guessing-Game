@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1v1 AI Guessing Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0d1117;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 20px;
+    }
+    #game-box {
+      background: #161b22;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+      width: 100%;
+      border-radius: 5px;
+      border: none;
+    }
+    input {
+      background: #21262d;
+      color: white;
+    }
+    button {
+      background: #238636;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2ea043;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #58a6ff;
+    }
+  </style>
+<script defer="" data-domain="beattheai.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script><script type="text/javascript" src="https://tiiny.host/ad-script.js"></script></head>
+<body>
+  <div id="game-box">
+    <h2>🎮 1v1 Guessing Game</h2>
+    <p>Guess a number between 1 and 5. Beat the AI!</p>
+    <input type="number" id="userGuess" placeholder="Enter your guess (1-5)" min="1" max="5">
+    <button onclick="playGame()">Submit Guess</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function playGame() {
+      const userInput = document.getElementById("userGuess");
+      const userGuess = parseInt(userInput.value);
+      const resultBox = document.getElementById("result");
+
+      if (isNaN(userGuess) || userGuess < 1 || userGuess > 5) {
+        resultBox.textContent = "⛔ Please enter a valid number between 1 and 5.";
+        return;
+      }
+
+      const aiGuess = Math.floor(Math.random() * 5) + 1;
+
+      let result = `🤖 AI guessed: ${aiGuess}. `;
+
+      if (userGuess === aiGuess) {
+        result += "🎉 You Win!";
+      } else {
+        result += "💀 AI Wins! Try again!";
+      }
+
+      resultBox.textContent = result;
+      userInput.value = "";
+    }
+  </script>
+
+
+</body></html>
+github 
