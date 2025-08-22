@@ -16,4 +16,7 @@ Guess a number between 1 and 5. If you match the AI, you win!
 
 Good luck... you'll need it. 🤖
 
-![Screenshot showing successful git clone command](image1.png)(image2.png)(image3.png)
+![](image1.png)
+![](image2.png)
+![](image3.png)
+
